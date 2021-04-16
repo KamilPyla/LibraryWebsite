@@ -1,5 +1,6 @@
 body {
     background-color: #3d3c3c;
+    margin: 0 !important;
 }
 
 .logo>h2 {
@@ -8,49 +9,40 @@ body {
 }
 
 .menu {
-    width: 100%;
-    padding: 10px 0;
     margin-left: auto;
     margin-right: auto;
+    width: 75%;
+    padding: 10px 10px;
     background-color: rgb(170, 66, 66);
     text-align: center;
 }
 
-.submenus {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-}
-
-.submenus>ul {
+.menu>ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
     line-height: 200%;
-    display: inline block;
 }
 
-.submenus>ul>li {
+.menu>ul li {
     float: left;
-    text-align: center;
-    background-color: rgb(170, 66, 66);
-    width: 24%;
+    width: 20%;
     color: #ffffff;
     border-right: 1px dashed black;
 }
 
-.submenus>ul>li:first-child {
+.menu>ul>li:first-child {
     border-left: 1px dashed black;
 }
 
-.submenus>ul>li:hover {
+.menu>ul>li:hover {
     background-color: #c26363;
 }
 
-.submenus>ul a {
+.menu>ul a {
     color: #ffffff;
     text-decoration: none;
+    display: block;
 }
 
 
