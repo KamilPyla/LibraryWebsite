@@ -1,0 +1,83 @@
+body {
+    background-color: #3d3c3c;
+}
+
+.logo>h2 {
+    color: wheat;
+    text-align: center;
+}
+
+.menu {
+    width: 75%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    background-color: rgb(170, 66, 66);
+    text-align: center;
+}
+
+.submenus {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submenu {
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(170, 66, 66);
+    width: 25%;
+    color: #ffffff;
+}
+
+.submenu:hover {
+    background-color: #c26363;
+}
+
+.submenu a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/* Artykul */
+
+.content {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: #585858;
+    color: #ffffff;
+}
+
+.title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: xx-large;
+    color: #ffffffde;
+}
+
+.content>article>ol>li {
+    font-size: xx-large;
+    font-style: italic;
+}
+
+.content>article>ol>ul>li {
+    font-size: large;
+    list-style-type: square;
+    font-style: ital;
+}
+
+.content>article>ol>ul>ol>li {
+    color: rgb(202, 202, 131);
+    list-style-type: lower-latin;
+    font-size: medium;
+}
+
+.content>article>ol>li>a {
+    color: white;
+}

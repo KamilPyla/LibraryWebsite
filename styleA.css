@@ -1,0 +1,22 @@
+body {
+    background-color: #4c4747;
+}
+
+.title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 20px;
+    color: #ffffffde;
+}
+
+h1 {
+    margin: left;
+}
+
+.content {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #857575;
+}
