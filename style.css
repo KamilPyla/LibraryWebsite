@@ -33,7 +33,7 @@ body {
 
 .submenus>ul>li {
     float: left;
-    width: 24.5%;
+    width: 19.5%;
     color: #ffffff;
     border-right: 1px dashed black;
 }
@@ -54,6 +54,21 @@ body {
 
 
 /* Artykul */
+
+.return {
+    text-align: center;
+    font-size: large;
+    font-style: italic;
+}
+
+.return a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.return:hover {
+    background-color: rgb(170, 66, 66);
+}
 
 .content {
     width: 75%;
@@ -93,7 +108,7 @@ body {
     color: white;
 }
 
-.video {
+.image {
     padding: 5px;
     width: 560px;
     height: 315px;
