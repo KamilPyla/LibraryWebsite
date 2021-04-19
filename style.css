@@ -164,6 +164,7 @@ th {
 
 .button:hover {
     background-color: blueviolet;
+    cursor: pointer;
 }
 
 #List {
