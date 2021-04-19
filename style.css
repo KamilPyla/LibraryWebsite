@@ -74,7 +74,7 @@ body {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
+    padding: 15px;
     background-color: #585858;
     color: #ffffff;
 }
@@ -94,14 +94,18 @@ body {
 
 .content>article>ol>ul>li {
     font-size: large;
-    list-style-type: square;
-    font-style: ital;
+    list-style-type: none;
+    font-style: italic;
 }
 
 .content>article>ol>ul>ol>li {
     color: rgb(202, 202, 131);
     list-style-type: lower-latin;
     font-size: medium;
+}
+
+.content>article>ol>ul>ol>li>p {
+    text-align: justify;
 }
 
 .content>article>ol>li>a {
