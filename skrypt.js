@@ -10,15 +10,14 @@ function woje() {
 
     var w = document.getElementById("woj").value;
 
-    if (w == "1") {
+    if (w == 1) {
 
         const citysDS = ["Bardo", "Bielawa", "Bierutów", "Bogatynia", "Boguszów-Gorce", "Bolesławiec", "Bolków", "Brzeg Dolny", "Bystrzyca Kłodzka", "Chocianów", "Chojnów", "Duszniki-Zdrój", "Dzierżoniów", "Głogów", "Głuszyca", "Góra (województwo dolnośląskie)", "Gryfów Śląski", "Jawor (miasto)", "Jaworzyna Śląska", "Jedlina-Zdrój", "Jelcz-Laskowice", "Jelenia Góra", "Kamieniec Ząbkowicki", "Kamienna Góra", "Karpacz", "Kąty Wrocławskie", "Kłodzko", "Kowary", "Kudowa-Zdrój", "Lądek-Zdrój", "Legnica", "Leśna", "Lubań (województwo dolnośląskie)", "Lubawka", "Lubin", "Lubomierz", "Lwówek Śląski", "Mieroszów", "Międzybórz", "Międzylesie", "Milicz", "Mirsk", "Niemcza", "Nowa Ruda", "Nowogrodziec", "Oborniki Śląskie", "Oleśnica", "Olszyna", "Oława", "Piechowice", "Pieńsk", "Pieszyce", "Piława Górna", "Polanica-Zdrój", "Polkowice", "Prochowice", "Prusice", "Przemków", "Radków", "Siechnice", "Sobótka (powiat wrocławski)", "Stronie Śląskie", "Strzegom", "Strzelin", "Syców", "Szczawno-Zdrój", "Szczytna", "Szklarska Poręba", "Ścinawa", "Środa Śląska", "Świdnica", "Świebodzice", "Świeradów-Zdrój", "Świerzawa", "Trzebnica", "Twardogóra", "Wałbrzych", "Wąsosz (województwo dolnośląskie)", "Węgliniec", "Wiązów", "Wleń", "Wojcieszów", "Wołów", "Wrocław", "Zawidów", "Ząbkowice Śląskie", "Zgorzelec", "Ziębice", "Złotoryja", "Złoty Stok", "Żarów", "Żmigród"];
         var s = "";
-        console.log("Krowa")
         for (i = 0; i < citysDS.length(); i++) {
             s = s + '<option>' + citysDS[i] + '</option>';
         }
-        document.getElementById("city").innerHTML = s;
+        document.getElementById("city").innerHTML = "<option>" + w + "</option>";
 
 
     } else if (w == 2) {
