@@ -18,4 +18,84 @@
 
 <body>
 
+    <div class="title">
+        Rejestracja
+    </div>
+    <div class="return">
+        <a href="index.html" title="Wróć do strony głównej">Strona główna</a>
+    </div>
+    <div class="form">
+        <table id="rejestr">
+            <tr>
+                <th>imię: </th>
+                <th><input type="text" id="name"></th>
+            </tr>
+            <tr>
+                <th>nazwisko: </th>
+                <th><input type="text" id="surname"></th>
+            </tr>
+            <tr>
+                <th>adres emial: </th>
+                <th><input type="email" id="email"></th>
+            </tr>
+            <tr>
+                <th>hasło: </th>
+                <th><input type="password" id="pass"></th>
+            </tr>
+            <tr>
+                <th>powtórz hasło: </th>
+                <th><input type="password" id="passRep"></th>
+                <th id="correctPass"></th>
+            </tr>
+            <tr>
+                <th>Województwo: </th>
+                <th>
+                    <select id="woj" onclick="woje()"> 
+                    <option value="none"> Wybierz Województwo </option>
+                    <option value="1"> Dolnośląskie </option>
+                    <option value="2"> Kujawsko-pomorskie </option>
+                    <option value="3"> Lubelskie </option>
+                    <option value="4"> Lubuskie </option>
+                    <option value="5"> Łódzkie </option>
+                    <option value="6"> Małopolskie </option>
+                    <option value="7"> Mazowieckie </option>
+                    <option value="8"> Opolskie </option>
+                    <option value="9"> Podkarpackie </option>
+                    <option value="10"> Podlaskie </option>
+                    <option value="11"> Pomorskie </option>
+                    <option value="12"> Śląskie </option>
+                    <option value="13"> Świętokszyskie </option>
+                    <option value="14"> Warmińsko-mazurskie </option>
+                    <option value="15"> Wielkopolskie </option>
+                    <option value="16"> Zachodniopomorskie </option>
+                    </select>
+                </th>
+                <th id="check"></th>
+            </tr>
+            <tr>
+                <th>Miasto: </th>
+                <th><select id="city">
+                    
+                </select></th>
+            </tr>
+            <tr>
+                <th>Kod pocztowy: </th>
+                <th><input type="password" id="postCode"></th>
+            </tr>
+            <tr>
+                <th>Płeć </th>
+                <th><input type="password" id="sex"></th>
+            </tr>
+            <tr>
+                <th>powtórz hasło: </th>
+                <th><input type="password" id="passRep"></th>
+            </tr>
+            <tr>
+                <th>powtórz hasło: </th>
+                <th><input type="password" id="passRep"></th>
+            </tr>
+        </table>
+        <input type="submit" value="Wyślij formularz" onclick="pass()" />
+    </div>
+
 </body>

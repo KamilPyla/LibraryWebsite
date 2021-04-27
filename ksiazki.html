@@ -27,19 +27,8 @@
     <!-- Wyszukiwarka!!! -->
 
     <div class="search">
-        <div class="record">
-            <input type="text" value="wpisz frazę" />
-            <input type="password" />
-            <input type="date" />
-            <input type="checkbox" />
-            <input type="radio" name="btn" />
-            <input type="radio" name="btn" />
-            <input type="radio" name="btn" />
-        </div>
-        <div class="button">
-            szukaj
-        </div>
-        <div style="clear:both"></div>
+        <input type="text" id="phrase" />
+        <input type="submit" value="szukaj" onclick="search()" />
     </div>
     <div id="List">
         <table>
