@@ -81,11 +81,22 @@ function woje() {
 
 }
 
-function pass() {
+function send() {
+
     var pass1 = document.getElementById("pass").value;
     var pass2 = document.getElementById("passRep").value;
-    if (pass1 == pass2)
-        document.getElementById("correctPass").innerHTML = "hasła są takie same";
-    else
-        document.getElementById("correctPass").innerHTML = "hasła nie są identyczne.";
+    var rule = document.getElementById("rule").value;
+    var mark = document.getElementById("marketing").value;
+
+    if (pass1 == "")
+        alert("Wpisz hasło!");
+    else if (pass1 != pass2 || pass1 == "")
+        alert("Hasła nie są takie same!!!");
+    else if (rule != 1)
+        alert("Wymagana zgoda regulaminu");
+    else if (mark != 1)
+        alert("Czy jesteś pewien, że nie chcesz otrzymywać materiałów marketingowych?")
+    else {
+        alert("Formularz został wysłany!")
+    }
 }
