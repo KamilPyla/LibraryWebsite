@@ -14,6 +14,12 @@ function city(tab) {
 
 }
 
+function pushMenu() {
+    s = '<ul><li class="current"><a href="index.html">Strona Główna</a></li><li><a href="article.html">Artykuł</a></li><li><a href="contact.html">Kontakt</a></li><li><a href="registration.html" title="Zarejestruj się!" target="_blank">Rejestracja</a></li><li><a href="books.html">Nasze książki</a></li></ul><div style="clear: both;"></div>';
+    s = 'blablabla';
+    document.getElementsByClassName("menu").innerHTML = s;
+}
+
 
 
 function woje() {
