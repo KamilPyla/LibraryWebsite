@@ -87,22 +87,45 @@ function prov() {
 
 }
 
+function checkPassword() {
+    var pass1 = document.getElementById("pass1").value;
+    var pass2 = document.getElementById("pass2").value;
+    var text = document.getElementById("checkPass");
+
+    if (pass1 != pass2) {
+        text.style.color = 'red';
+        text.innerHTML = "Hasła nie są takie same";
+    } else {
+        text.innerHTML = "Hasła są takie same";
+        text.style.color = "#3bb660";
+    }
+}
+
+function checkPostCode() {
+    var code = document.getElementById("postCode").value;
+    if (code[2] != '-' || code.length != 6)
+        alert("wpisz właściwy kod pocztowy!")
+}
+
 function send() {
 
-    var pass1 = document.getElementById("pass").value;
-    var pass2 = document.getElementById("passRep").value;
-    var rule = document.getElementById("rule").value;
-    var mark = document.getElementById("marketing").value;
+    var pass1 = document.getElementById("pass1").value;
+    var pass2 = document.getElementById("pass2").value;
+    var rule = document.getElementById("regulation");
+    var mark = document.getElementById("marketing");
+    checkPostCode();
 
     if (pass1 == "")
         alert("Wpisz hasło!");
-    else if (pass1 != pass2 || pass1 == "")
+    else if (pass1 != pass2)
         alert("Hasła nie są takie same!!!");
-    else if (rule != 1)
+    else if (rule.checked != true)
         alert("Wymagana zgoda regulaminu");
-    else if (mark != 1)
-        alert("Czy jesteś pewien, że nie chcesz otrzymywać materiałów marketingowych?")
-    else {
+    else if (mark.checked != true) {
+        if (confirm("Czy jesteś pewien, że nie chcesz otrzymywać materiałów marketingowych?")) {
+            alert("Formularz został wysłany!")
+        }
+    } else {
         alert("Formularz został wysłany!")
     }
 }

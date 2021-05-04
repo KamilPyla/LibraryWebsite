@@ -32,8 +32,8 @@
                 <div>Imię: <input type="text" id="name"> </div>
                 <div>Nazwisko:<input type="text" id="surname"> </div>
                 <div>Email: <input type="email" id="email"></div>
-                <div>Hasło: <input type="password" id="pass1"></div>
-                <div>Powtórz hasło: <input type="password" id="pass2"></div>
+                <div>Hasło: <input type="password" oninput="checkPassword()" id="pass1"></div>
+                <div>Powtórz hasło: <input type="password" id="pass2" oninput="checkPassword()"> <i id="checkPass"></i> </div>
                 <div>
                     Płeć:
                     <label>Kobieta <input type="radio" name="sex" value="K"></label>
@@ -73,17 +73,17 @@
                 </div>
                 <div>
                     Kod pocztowy:
-                    <input type="text">
+                    <input type="text" id="postCode" placeholder="Bez spacji">
                 </div>
             </fieldset>
 
             <fieldset>
-                <legend> Zgoda za regumaliny </legend>
+                <legend> Zgoda za regulaminy </legend>
                 <div>
-                    <label>Akceptuję regulamin<input type="checkbox" value="1"></label>
+                    <label>Akceptuję regulamin<input type="checkbox" id="regulation"></label>
                 </div>
                 <div>
-                    <label>Zgadzam się na wysłanie ofert martetingowych<input type="checkbox" value="1"></label>
+                    <label>Zgadzam się na wysłanie ofert martetingowych<input type="checkbox" id="marketing"></label>
                 </div>
             </fieldset>
             <div>
