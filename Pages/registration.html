@@ -21,15 +21,25 @@
     <div class="title">
         Rejestracja
     </div>
-    <div class="return">
-        <a href="index.html" title="Wróć do strony głównej">Strona główna</a>
+    <div class="spacer"></div>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="article.html">Artykuł</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+            <li class="current"><a href="registration.html" title="Zarejestruj się!">Rejestracja</a></li>
+            <li><a href="books.html">Nasze książki</a></li>
+        </ul>
+        <div style="clear: both;"></div>
     </div>
+
+    <div class="spacer"></div>
 
     <div class="form">
         <form>
             <fieldset>
                 <legend> Dane osobowe </legend>
-                <div>Imię: <input type="text" id="name"> </div>
+                <div><label style="width: 250px;">Imię: <input type="text" id="name"></label> </div>
                 <div>Nazwisko:<input type="text" id="surname"> </div>
                 <div>Email: <input type="email" id="email"></div>
                 <div>Hasło: <input type="password" oninput="checkPassword()" id="pass1"></div>
@@ -78,16 +88,16 @@
             </fieldset>
 
             <fieldset>
-                <legend> Zgoda za regulaminy </legend>
+                <legend> Zgoda na regulaminy </legend>
                 <div>
-                    <label>Akceptuję regulamin<input type="checkbox" id="regulation"></label>
+                    <label>Akceptuję regulamin<input type="checkbox" id="regulation" required ></label>
                 </div>
                 <div>
                     <label>Zgadzam się na wysłanie ofert martetingowych<input type="checkbox" id="marketing"></label>
                 </div>
             </fieldset>
             <div>
-                <label><input type="button" value="Wyślij" onclick="send()"></label>
+                <label><input type="submit" value="Wyślij" onclick="send()"></label>
             </div>
         </form>
     </div>
