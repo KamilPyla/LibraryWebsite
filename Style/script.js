@@ -9,7 +9,7 @@ function search() {
 function city(tab) {
     s = "";
     for (i = 0; i < tab.length; i++)
-        s = s + '<option>' + tab[i] + '</option>';
+        s = s + '<option value="' + tab[i] + '">' + tab[i] + '</option>';
     return s;
 
 }
@@ -22,9 +22,9 @@ function pushMenu() {
 
 
 
-function woje() {
+function prov() {
 
-    var w = document.getElementById("woj").value;
+    var w = document.getElementById("province").value;
 
     if (w == 1) {
 

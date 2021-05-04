@@ -24,33 +24,28 @@
     <div class="return">
         <a href="index.html" title="Wróć do strony głównej">Strona główna</a>
     </div>
+
     <div class="form">
-        <table id="rejestr">
-            <tr>
-                <th>imię: </th>
-                <th><input type="text" id="name"></th>
-            </tr>
-            <tr>
-                <th>nazwisko: </th>
-                <th><input type="text" id="surname"></th>
-            </tr>
-            <tr>
-                <th>adres emial: </th>
-                <th><input type="email" id="email"></th>
-            </tr>
-            <tr>
-                <th>hasło: </th>
-                <th><input type="password" id="pass"></th>
-            </tr>
-            <tr>
-                <th>powtórz hasło: </th>
-                <th><input type="password" id="passRep"></th>
-                <th id="correctPass"></th>
-            </tr>
-            <tr>
-                <th>Województwo: </th>
-                <th>
-                    <select id="woj" onclick="woje()"> 
+        <form>
+            <fieldset>
+                <legend> Dane osobowe </legend>
+                <div>Imię: <input type="text" id="name"> </div>
+                <div>Nazwisko:<input type="text" id="surname"> </div>
+                <div>Email: <input type="email" id="email"></div>
+                <div>Hasło: <input type="password" id="pass1"></div>
+                <div>Powtórz hasło: <input type="password" id="pass2"></div>
+                <div>
+                    Płeć:
+                    <label>Kobieta <input type="radio" name="sex" value="K"></label>
+                    <label>Mężczyzna <input type="radio" name="sex" value="M"></label>
+                    <label>Inna <input type="radio" name="sex" value="I"></label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend> Dane kontaktowe </legend>
+                <div>Województwo:
+                    <select id="province" onclick="prov()">
                     <option value="none"> Wybierz Województwo </option>
                     <option value="1"> Dolnośląskie </option>
                     <option value="2"> Kujawsko-pomorskie </option>
@@ -68,36 +63,34 @@
                     <option value="14"> Warmińsko-mazurskie </option>
                     <option value="15"> Wielkopolskie </option>
                     <option value="16"> Zachodniopomorskie </option>
-                    </select>
-                </th>
-            </tr>
-            <tr>
-                <th>Miasto: </th>
-                <th><select id="city">
-                    
-                </select></th>
-            </tr>
-            <tr>
-                <th>Kod pocztowy: </th>
-                <th><input type="text" id="postCode"></th>
-            </tr>
-            <tr>
-                <th>Płeć </th>
-                <th>Mężczyzna<input type="radio" name="radio" value="M"> Kobieta
-                    <input type="radio" name="radio" value="K"> Inna
-                    <input type="radio" name="radio" value="I">
-                </th>
-            </tr>
-            <tr>
-                <th>Zgoda na regulamin </th>
-                <th><input type="checkbox" value="1" id="rule"></th>
-            </tr>
-            <tr>
-                <th> Zgoda na marketing </th>
-                <th><input type="checkbox" id="marketing" value="1"></th>
-            </tr>
-        </table>
-        <input type="submit" value="Wyślij formularz" onclick="send()" />
+                </select>
+                </div>
+                <div>
+                    Miasto:
+                    <select id="city">
+                    <option> ... </option>
+                </select>
+                </div>
+                <div>
+                    Kod pocztowy:
+                    <input type="text">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend> Zgoda za regumaliny </legend>
+                <div>
+                    <label>Akceptuję regulamin<input type="checkbox" value="1"></label>
+                </div>
+                <div>
+                    <label>Zgadzam się na wysłanie ofert martetingowych<input type="checkbox" value="1"></label>
+                </div>
+            </fieldset>
+            <div>
+                <label><input type="button" value="Wyślij" onclick="send()"></label>
+            </div>
+        </form>
     </div>
+
 
 </body>
