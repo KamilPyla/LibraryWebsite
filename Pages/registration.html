@@ -39,11 +39,11 @@
         <form>
             <fieldset>
                 <legend> Dane osobowe </legend>
-                <div><label style="width: 250px;">Imię: <input type="text" id="name"></label> </div>
-                <div>Nazwisko:<input type="text" id="surname"> </div>
-                <div>Email: <input type="email" id="email"></div>
-                <div>Hasło: <input type="password" oninput="checkPassword()" id="pass1"></div>
-                <div>Powtórz hasło: <input type="password" id="pass2" oninput="checkPassword()"> <i id="checkPass"></i> </div>
+                <div> <label style="width: 250px;"> Imię: <input type="text" id="name" maxlength="150"> </label> </div>
+                <div> <label> Nazwisko:<input type="text" id="surname" maxlength="150"> </label> </div>
+                <div> <label> Email: <input type="email" id="email" required> </label> </div>
+                <div> <label> Hasło: <input type="password" oninput="checkPassword()" id="pass1" required> </label> </div>
+                <div> <label> Powtórz hasło: <input type="password" id="pass2" oninput="checkPassword()" required> </label> <i id="checkPass"></i> </div>
                 <div>
                     Płeć:
                     <label>Kobieta <input type="radio" name="sex" value="K"></label>
