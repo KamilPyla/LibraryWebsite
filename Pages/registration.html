@@ -21,7 +21,6 @@
     <div class="title">
         Rejestracja
     </div>
-    <div class="spacer"></div>
     <div class="menu" onload="pushMenu()">
         <ul>
             <li><a href="index.html">Strona Główna</a></li>
@@ -33,74 +32,93 @@
         <div style="clear: both;"></div>
     </div>
 
-    <div class="spacer"></div>
-
     <div class="form">
         <form>
             <fieldset>
                 <legend> Dane osobowe </legend>
-                <div> <label style="width: 250px;"> Imię: <input type="text" id="name" maxlength="150"> </label> </div>
-                <div> <label> Nazwisko:<input type="text" id="surname" maxlength="150"> </label> </div>
-                <div> <label> Email: <input type="email" id="email" required> </label> </div>
-                <div> <label> Hasło: <input type="password" oninput="checkPassword()" id="pass1" required> </label> </div>
-                <div> <label> Powtórz hasło: <input type="password" id="pass2" oninput="checkPassword()" required> </label> <i id="checkPass"></i> </div>
-                <div>
-                    Płeć:
+                <div> <label> <li> Imię:</li> <input type="text" id="name" maxlength="150"> </label> </div>
+                <div> <label> <li> Nazwisko:</li> <input type="text" id="surname" maxlength="150"> </label> </div>
+                <div> <label> <li> Email:</li> <input type="email" id="email" required> </label> </div>
+                <div> <label> <li> Hasło:</li> <input type="password" oninput="checkPassword()" id="pass1" required> </label> </div>
+                <div> <label> <li> Powtórz hasło:</li> <input type="password" id="pass2" oninput="checkPassword()" required> </label> </div>
+                <label><li></li><i id="checkPass"></i></label>
+
+                <div><label><li>Płeć:</li>
+
                     <label>Kobieta <input type="radio" name="sex" value="K"></label>
                     <label>Mężczyzna <input type="radio" name="sex" value="M"></label>
                     <label>Inna <input type="radio" name="sex" value="I"></label>
+                    </label>
                 </div>
             </fieldset>
 
             <fieldset>
                 <legend> Dane kontaktowe </legend>
-                <div>Województwo:
+
+                <div><label>
+
+                    <li> Województwo:</li>
                     <select id="province" onclick="prov()">
-                    <option value="none"> Wybierz Województwo </option>
-                    <option value="1"> Dolnośląskie </option>
-                    <option value="2"> Kujawsko-pomorskie </option>
-                    <option value="3"> Lubelskie </option>
-                    <option value="4"> Lubuskie </option>
-                    <option value="5"> Łódzkie </option>
-                    <option value="6"> Małopolskie </option>
-                    <option value="7"> Mazowieckie </option>
-                    <option value="8"> Opolskie </option>
-                    <option value="9"> Podkarpackie </option>
-                    <option value="10"> Podlaskie </option>
-                    <option value="11"> Pomorskie </option>
-                    <option value="12"> Śląskie </option>
-                    <option value="13"> Świętokszyskie </option>
-                    <option value="14"> Warmińsko-mazurskie </option>
-                    <option value="15"> Wielkopolskie </option>
-                    <option value="16"> Zachodniopomorskie </option>
-                </select>
+                        <option value="none"> Wybierz Województwo </option>
+                        <option value="1"> Dolnośląskie </option>
+                        <option value="2"> Kujawsko-pomorskie </option>
+                        <option value="3"> Lubelskie </option>
+                        <option value="4"> Lubuskie </option>
+                        <option value="5"> Łódzkie </option>
+                        <option value="6"> Małopolskie </option>
+                        <option value="7"> Mazowieckie </option>
+                        <option value="8"> Opolskie </option>
+                        <option value="9"> Podkarpackie </option>
+                        <option value="10"> Podlaskie </option>
+                        <option value="11"> Pomorskie </option>
+                        <option value="12"> Śląskie </option>
+                        <option value="13"> Świętokszyskie </option>
+                        <option value="14"> Warmińsko-mazurskie </option>
+                        <option value="15"> Wielkopolskie </option>
+                        <option value="16"> Zachodniopomorskie </option>
+                    </select>
+                </label>
                 </div>
                 <div>
-                    Miasto:
-                    <select id="city">
-                    <option> ... </option>
-                </select>
+                    <label>
+
+                        <li>Miasto:</li>
+                        <select id="city">
+                            <option> ... </option>
+                        </select>
+                    </label>
                 </div>
                 <div>
-                    Kod pocztowy:
-                    <input type="text" id="postCode" placeholder="Bez spacji">
+                    <label>
+                    <li>Kod pocztowy:</li>
+                    <!-- <input type="text" id="postCode" placeholder="Bez spacji"> -->
+                    <input class="postCode" type="text" maxlength="1">
+                    <input class="postCode" type="text" maxlength="1"> -
+                    <input class="postCode" type="text" maxlength="1">
+                    <input class="postCode" type="text" maxlength="1">
+                    <input class="postCode" type="text" maxlength="1">
+                    </label>
                 </div>
             </fieldset>
 
             <fieldset>
                 <legend> Zgoda na regulaminy </legend>
                 <div>
-                    <label>Akceptuję regulamin<input type="checkbox" id="regulation" required ></label>
+                    <input type="checkbox" id="regulation" required>
+                    <p style="font-size: 12px;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in mi egestas, ornare turpis a, fringilla massa. In tempus ullamcorper ultrices. Pellentesque vel aliquet ligula, sit amet tristique augue. Morbi enim tellus, posuere
+                        eget molestie eu, pharetra quis leo. Curabitur massa ante, tincidunt sed nisi vitae, consectetur luctus sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia
+                        nostra, per inceptos himenaeos. Sed euismod in risus nec scelerisque. Donec sed eleifend magna, sed eleifend quam. Ut sed eros lacus. Praesent imperdiet, nunc a rutrum rhoncus, nisi ex vehicula mauris, vel posuere dolor dolor at
+                        urna. Pellentesque convallis sit amet lorem rutrum mollis. Phasellus dui tellus, tincidunt a neque quis, varius convallis nisi. Nulla aliquam ante ut leo iaculis rutrum.</i>
+                        <a href="http://www.bg.agh.edu.pl/media/regulamin2015/r1.pdf" target="_blank" style="color: rgb(89, 2, 172)">Zabacz regulamin</a></p>
                 </div>
                 <div>
                     <label>Zgadzam się na wysłanie ofert martetingowych<input type="checkbox" id="marketing"></label>
                 </div>
             </fieldset>
             <div>
-                <label><input type="submit" value="Wyślij" onclick="send()"></label>
+                <label><input type="submit" value="Wyślij" onclick="send()" ></label>
             </div>
         </form>
     </div>
-
 
 </body>

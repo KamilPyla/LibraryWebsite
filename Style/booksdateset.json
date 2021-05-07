@@ -1,0 +1,29 @@
+{
+    "data": [
+        { "id": 1, "author": "Arystoteles", "title": "Poetyka, Retoryka (fragmenty)", "genre": "liryka" },
+        { "id": 2, "author": "Platon", "title": "Państwo", "genre": "epika" },
+        { "id": 3, "author": "Arystofanes – ", "title": "Chmury", "genre": "liryka" },
+        { "id": 4, "author": "Jan Parandowski", "title": "Mitologia, część II Rzym", "genre": "epika" },
+        { "id": 5, "author": "Wergiliusz", "title": "Eneida", "genre": "liryka" },
+        { "id": 6, "author": "Św. Augustyn", "title": "Wyznania", "genre": "epika" },
+        { "id": 7, "author": "Św. Tomasz z Akwinu", "title": "Summa teologiczna", "genre": "epika" },
+        { "id": 8, "author": "François Villon", "title": "Wielki testament", "genre": "liryka" },
+        { "id": 9, "author": "François Rabelais", "title": "Gargantua i Pantagruel", "genre": "epika" },
+        { "id": 10, "author": "Michel de Montaigne", "title": "Próby", "genre": "epika" },
+        { "id": 11, "author": "Jan Kochanowski", "title": "Treny", "genre": "liryka" },
+        { "id": 12, "author": "Piotr Skarga", "title": "Żywoty świętych", "genre": "epika" },
+        { "id": 13, "author": "William Szekspir", "title": "Hamlet", "genre": "dramat" },
+        { "id": 14, "author": "Sławomir Mrożek", "title": "Emigranci", "genre": "liryka" },
+        { "id": 15, "author": "Juliusz Słowacki", "title": "Lilla Weneda", "genre": "liryka" },
+        { "id": 16, "author": "Cyprian Kamil Norwid", "title": "Bema pamięci żałobny rapsod", "genre": "liryka" },
+        { "id": 17, "author": "Honoré de Balzac", "title": "Charles Dickens", "genre": "epika" },
+        { "id": 18, "author": "Stanisław Wyspiański", "title": "Noc listopadowa", "genre": "epika" },
+        { "id": 19, "author": "Franz Kafka", "title": "Proces", "genre": "epika" },
+        { "id": 20, "author": "Michaił Bułhakow", "title": "Mistrz i Małgorzata", "genre": "epika" },
+        { "id": 21, "author": "Stanisław Ignacy Witkiewicz", "title": "Szewcy", "genre": "epika" },
+        { "id": 23, "author": "Bruno Schulz", "title": "Sklepy cynamonowe", "genre": "epika" },
+        { "id": 24, "author": "Tadeusz Konwicki", "title": "Mała apokalipsa", "genre": "" },
+        { "id": 25, "author": "Jorge Luis Borges", "title": "Opowiadania", "genre": "epika" },
+        { "id": 26, "author": "Janusz Głowacki", "title": "Antygona w Nowym Jorku", "genre": "" }
+    ]
+}

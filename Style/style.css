@@ -11,6 +11,8 @@ body {
 .menu {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 75%;
     padding: 10px 10px;
     background-color: rgb(170, 66, 66);
@@ -95,9 +97,10 @@ p {
 .firstPara::first-letter {
     float: left;
     font-size: 60px;
+    /* inne jednostki */
     color: rgba(238, 18, 18, 0.699);
     padding-right: 4px;
-    line-height: 0.7;
+    line-height: 0.4;
 }
 
 .content>article ol {
@@ -229,5 +232,65 @@ td {
     margin-right: auto;
     background-color: #585858;
     color: white;
-    text-align: center;
+    /* text-align: center; */
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+select {
+    margin-top: 7.5px;
+    color: rgb(65, 46, 65);
+    width: 60%;
+    border: 2px solid rgb(170, 66, 66);
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+input[type='radio']:checked:after {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    /* top: -2px;
+    left: -1px; */
+    /* position: relative; */
+    background-color: rgb(170, 66, 66);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='checkbox'] {
+    float: left;
+    margin: 4px;
+}
+
+input[type='checkbox']:checked:after {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(170, 66, 66);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='submit'] {
+    margin-top: 7px;
+    width: 100%;
+    background: rgb(170, 66, 66);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+input.postCode {
+    width: 10px;
+}
+
+label>li {
+    width: 30%;
+    display: inline-block;
 }

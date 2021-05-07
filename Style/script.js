@@ -17,7 +17,7 @@ function city(tab) {
 function pushMenu() {
     s = '<ul><li class="current"><a href="index.html">Strona Główna</a></li><li><a href="article.html">Artykuł</a></li><li><a href="contact.html">Kontakt</a></li><li><a href="registration.html" title="Zarejestruj się!" target="_blank">Rejestracja</a></li><li><a href="books.html">Nasze książki</a></li></ul><div style="clear: both;"></div>';
     s = 'blablabla';
-    document.getElementsById("menu").innerHTML = s;
+    document.getElementsByClassName("menu").innerHTML = s;
 }
 
 
@@ -64,7 +64,7 @@ function prov() {
 
     } else if (w == 10) {
         const citysPD = ["Augustów", "Białystok", "Bielsk Podlaski", "Brańsk", "Choroszcz", "Ciechanowiec", "Czarna Białostocka", "Czyżew", "Dąbrowa Białostocka", "Drohiczyn (Polska)", "Goniądz", "Grajewo", "Hajnówka", "Jedwabne", "Kleszczele", "Knyszyn", "Kolno", "Krynki", "Lipsk (powiat augustowski)", "Łapy", "Łomża", "Michałowo", "Mońki", "Nowogród", "Rajgród", "Sejny", "Siemiatycze", "Sokółka", "Stawiski", "Suchowola", "Supraśl", "Suraż", "Suwałki", "Szczuczyn (województwo podlaskie)", "Szepietowo", "Tykocin", "Wasilków", "Wysokie Mazowieckie", "Zabłudów", "Zambrów"];
-        document.getElementById("city").innerHTML = innerHTML = city(citysPD);
+        document.getElementById("city").innerHTML = city(citysPD);
 
     } else if (w == 11) {
         const citysPM = ["Brusy", "Bytów", "Chojnice", "Czarna Woda (miasto)", "Czarne", "Czersk", "Człuchów", "Debrzno", "Dzierzgoń", "Gdańsk", "Gdynia", "Gniew (miasto)", "Hel (miasto)", "Jastarnia", "Kartuzy", "Kępice", "Kościerzyna", "Krynica Morska", "Kwidzyn", "Lębork", "Łeba", "Malbork", "Miastko", "Nowy Dwór Gdański", "Nowy Staw", "Pelplin", "Prabuty", "Pruszcz Gdański", "Puck", "Reda (miasto)", "Rumia", "Skarszewy", "Skórcz", "Słupsk", "Sopot", "Starogard Gdański", "Sztum", "Tczew", "Ustka", "Wejherowo", "Władysławowo", "Żukow"];
@@ -100,7 +100,7 @@ function checkPassword() {
     var text = document.getElementById("checkPass");
 
     if (pass1 != pass2) {
-        text.style.color = 'red';
+        text.style.color = "rgb(230, 66, 80)";
         text.innerHTML = "Hasła nie są takie same";
     } else {
         text.innerHTML = "Hasła są takie same";
@@ -120,7 +120,7 @@ function send() {
     var pass2 = document.getElementById("pass2").value;
     var rule = document.getElementById("regulation");
     var mark = document.getElementById("marketing");
-    checkPostCode();
+    //checkPostCode();
 
     if (pass1 == "")
         alert("Wpisz hasło!");
@@ -132,6 +132,7 @@ function send() {
         if (confirm("Czy jesteś pewien, że nie chcesz otrzymywać materiałów marketingowych?")) {
             alert("Formularz został wysłany!")
         }
+        //zatrzymanie akcji !
     } else {
         alert("Formularz został wysłany!")
     }
