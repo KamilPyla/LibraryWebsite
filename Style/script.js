@@ -144,5 +144,3 @@ function nextNumber() {
     next.after.focus
 
 }
-
-//   kontakt
