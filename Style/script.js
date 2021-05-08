@@ -120,7 +120,8 @@ function send() {
     var pass2 = document.getElementById("pass2").value;
     var rule = document.getElementById("regulation");
     var mark = document.getElementById("marketing");
-    //checkPostCode();
+    // checkPostCode();
+    nextNumber();
 
     if (pass1 == "")
         alert("Wpisz hasło!");
@@ -137,3 +138,11 @@ function send() {
         alert("Formularz został wysłany!")
     }
 }
+
+function nextNumber() {
+    var next = document.getElementById("secondNum");
+    next.after.focus
+
+}
+
+//   kontakt

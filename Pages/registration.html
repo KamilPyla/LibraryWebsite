@@ -44,10 +44,9 @@
                 <label><li></li><i id="checkPass"></i></label>
 
                 <div><label><li>Płeć:</li>
-
-                    <label>Kobieta <input type="radio" name="sex" value="K"></label>
-                    <label>Mężczyzna <input type="radio" name="sex" value="M"></label>
-                    <label>Inna <input type="radio" name="sex" value="I"></label>
+                    <label class="sex">Kobieta <input type="radio" name="sex" value="K"></label>
+                    <label class="sex">Mężczyzna <input type="radio" name="sex" value="M"></label>
+                    <label class="sex">Inna <input type="radio" name="sex" value="I"></label>
                     </label>
                 </div>
             </fieldset>
@@ -88,15 +87,15 @@
                         </select>
                     </label>
                 </div>
-                <div>
-                    <label>
+                <div class="postCode">
+                    <label oninput="nextNumber()">
                     <li>Kod pocztowy:</li>
                     <!-- <input type="text" id="postCode" placeholder="Bez spacji"> -->
-                    <input class="postCode" type="text" maxlength="1">
-                    <input class="postCode" type="text" maxlength="1"> -
-                    <input class="postCode" type="text" maxlength="1">
-                    <input class="postCode" type="text" maxlength="1">
-                    <input class="postCode" type="text" maxlength="1">
+                    <input  id="firstNum" type="text" pattern="[0-9]" maxlength="1" >
+                    <input  id="secondNum" type="text" pattern="[0-9]" maxlength="1"> -
+                    <input  id="thirdNum" type="text" pattern="[0-9]" maxlength="1">
+                    <input  id="fourthNum" type="text" pattern="[0-9]" maxlength="1">
+                    <input  id="fifthNum" type="text" pattern="[0-9]" maxlength="1" oninput="nextNumber()">
                     </label>
                 </div>
             </fieldset>
@@ -112,7 +111,7 @@
                         <a href="http://www.bg.agh.edu.pl/media/regulamin2015/r1.pdf" target="_blank" style="color: rgb(89, 2, 172)">Zabacz regulamin</a></p>
                 </div>
                 <div>
-                    <label>Zgadzam się na wysłanie ofert martetingowych<input type="checkbox" id="marketing"></label>
+                    <label style="cursor: pointer;">Zgadzam się na wysłanie ofert martetingowych<input type="checkbox" id="marketing"></label>
                 </div>
             </fieldset>
             <div>

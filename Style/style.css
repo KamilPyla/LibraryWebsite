@@ -11,21 +11,13 @@ body {
 .menu {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     width: 75%;
     padding: 10px 10px;
     background-color: rgb(170, 66, 66);
     text-align: center;
 }
-
-
-/* .submenus {
-    background-color: rgb(202, 202, 131);
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-} */
 
 .menu>ul {
     padding: 0;
@@ -131,22 +123,6 @@ p {
     font-style: normal;
 }
 
-
-/* .return {
-    text-align: center;
-    font-size: large;
-    font-style: italic;
-}
-
-.return a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.return:hover {
-    background-color: rgb(170, 66, 66);
-} */
-
 .image {
     padding: 5px;
     width: 560px;
@@ -230,6 +206,8 @@ td {
     padding: 5px 10px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
+    border: 2px solid #ffffffde;
     background-color: #585858;
     color: white;
     /* text-align: center; */
@@ -247,13 +225,18 @@ select {
     font-size: 15px;
 }
 
+label.sex {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    cursor: pointer;
+}
+
 input[type='radio']:checked:after {
     width: 10px;
     height: 10px;
     border-radius: 10px;
-    /* top: -2px;
-    left: -1px; */
-    /* position: relative; */
     background-color: rgb(170, 66, 66);
     content: '';
     display: inline-block;
@@ -264,6 +247,7 @@ input[type='radio']:checked:after {
 input[type='checkbox'] {
     float: left;
     margin: 4px;
+    cursor: pointer;
 }
 
 input[type='checkbox']:checked:after {
@@ -284,13 +268,50 @@ input[type='submit'] {
     border: 2px solid white;
     border-radius: 10px;
     font-size: 15px;
+    cursor: pointer;
 }
 
-input.postCode {
+.postCode>label>input {
     width: 10px;
+    display: inline;
 }
 
 label>li {
     width: 30%;
     display: inline-block;
+}
+
+
+/* Kontakt */
+
+.box {
+    margin-top: 100px;
+    width: 800px;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 2px solid #ffffff9a;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #585858;
+}
+
+.contact {
+    text-align: center;
+    float: left;
+    width: 200px;
+}
+
+.contact>li {
+    list-style: none;
+}
+
+.fb-like {
+    width: 300px;
+}
+
+.map {
+    width: 360px;
+    height: 215px;
+    float: right;
 }
