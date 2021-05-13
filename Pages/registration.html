@@ -33,7 +33,7 @@
     </div>
 
     <div class="form">
-        <form>
+        <form id='form'>
             <fieldset>
                 <legend> Dane osobowe </legend>
                 <div> <label> <li> Imię:</li> <input type="text" id="name" maxlength="150"> </label> </div>
@@ -88,14 +88,13 @@
                     </label>
                 </div>
                 <div class="postCode">
-                    <label oninput="nextNumber()">
+                    <label>
                     <li>Kod pocztowy:</li>
-                    <!-- <input type="text" id="postCode" placeholder="Bez spacji"> -->
-                    <input  id="firstNum" type="text" pattern="[0-9]" maxlength="1" >
-                    <input  id="secondNum" type="text" pattern="[0-9]" maxlength="1"> -
-                    <input  id="thirdNum" type="text" pattern="[0-9]" maxlength="1">
-                    <input  id="fourthNum" type="text" pattern="[0-9]" maxlength="1">
-                    <input  id="fifthNum" type="text" pattern="[0-9]" maxlength="1" oninput="nextNumber()">
+                    <input  id="firstNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()"oninput= "focusOnElementById('secondNum')">
+                    <input  id="secondNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()"oninput="focusOnElementById('thirdNum')"> -
+                    <input  id="thirdNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()"oninput= "focusOnElementById('fourthNum')">
+                    <input  id="fourthNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()"oninput="focusOnElementById('fifthNum')">
+                    <input  id="fifthNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()" >
                     </label>
                 </div>
             </fieldset>
@@ -120,4 +119,4 @@
         </form>
     </div>
 
-</body>
+    </body
