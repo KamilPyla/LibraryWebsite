@@ -14,10 +14,15 @@ function city(tab) {
 
 }
 
-function pushMenu() {
-    s = '<ul><li class="current"><a href="index.html">Strona Główna</a></li><li><a href="article.html">Artykuł</a></li><li><a href="contact.html">Kontakt</a></li><li><a href="registration.html" title="Zarejestruj się!" target="_blank">Rejestracja</a></li><li><a href="books.html">Nasze książki</a></li></ul><div style="clear: both;"></div>';
-    s = 'blablabla';
-    document.getElementsByClassName("menu").innerHTML = s;
+function pushMenu(name) {
+    s = '<ul><li id="homePage"><a href="index.html">Strona Główna</a></li><li id="article"><a href="article.html">Artykuł</a></li><li id="contact"><a href="contact.html">Kontakt</a></li><li id="registration"><a href="registration.html" title="Zarejestruj się!">Rejestracja</a></li><li id="books"><a href="books.html">Nasze książki</a></li></ul><div style="clear: both;"></div>';
+
+    // $('#menu').load('../Pages/menu.html');
+
+    document.getElementById("menu").innerHTML = s;
+
+
+    document.getElementById(name).className = 'current';
 }
 
 
@@ -140,51 +145,28 @@ function checkPassword() {
 }
 
 
-function send() {
+function send(event) {
+    let formData = $('#form').serializeArray().map(function(r) {
+        return r.name + ": " + r.value;
+    }).join("\n");
 
-    var pass1 = document.getElementById("pass1").value;
-    var pass2 = document.getElementById("pass2").value;
-    var rule = document.getElementById("regulation");
-    var mark = document.getElementById("marketing");
-
-
-    if (pass1 == "")
-        alert("Wpisz hasło!");
-    else if (pass1 != pass2)
-        alert("Hasła nie są takie same!!!");
-    else if (rule.checked != true)
-        alert("Wymagana zgoda regulaminu");
-    else if (mark.checked != true) {
+    if (document.getElementById("marketing").checked != true) {
         if (confirm("Czy jesteś pewien, że nie chcesz otrzymywać materiałów marketingowych?")) {
-            alert("Formularz został wysłany!")
-        } else {
-            alert('Brak zgody!')
-            return false;
-        }
-        //zatrzymanie akcji !
+            alert(formData);
+            alert("Formularz został wysłany!");
+        } else event.preventDefault();
     } else {
-        alert("Formularz został wysłany!")
+        alert(formData);
+        alert("Formularz został wysłany!");
     }
-    s = "Imię: ";
-    s += document.getElementById("name").value + " \n";
-    s += "Nazwisko: " + document.getElementById("surname").value + "\n";
-    s += "Adres email: " + document.getElementById("email").value + "\n";
-    // s += "Płeć: " + document.getElementById("sex").value + "\n";
-    s += "Województwo: " + document.getElementById("province").value + "\n";
-    s += "Miasto: " + document.getElementById("city").value + "\n";
-    s += "Kod pocztowy: ";
-    s += getPostCode() + "\n";
-    alert(s);
 }
 
+
+
 function focusOnElementById(id) {
-    // if (obj.value.length < obj.maxLength) return
-    // for (i = 0, f = obj.form; i < f.elements.length - 1; i++)
-    //     if (f.elements[i] == obj) {
-    //         f.elements[i + 1].focus();
-    //         return;
-    //     }
     document.getElementById(id).focus();
+
+    getPostCode();
 }
 
 function getPostCode() {
@@ -194,7 +176,7 @@ function getPostCode() {
     s += document.getElementById("thirdNum").value;
     s += document.getElementById("fourthNum").value;
     s += document.getElementById("fifthNum").value;
-    return s;
+    document.getElementById("postCode").value = s;
 }
 
 // tabela z książkami:
@@ -208,3 +190,44 @@ function readAddBooks() {
             console.log(data);
         });
 }
+
+function readJSON() {
+    const jsonText = JSON.stringify({
+        "data": [
+            { "id": 1, "author": "Arystoteles", "title": "Poetyka, Retoryka (fragmenty)", "genre": "liryka" },
+            { "id": 2, "author": "Platon", "title": "Państwo", "genre": "epika" },
+            { "id": 3, "author": "Arystofanes – ", "title": "Chmury", "genre": "liryka" },
+            { "id": 4, "author": "Jan Parandowski", "title": "Mitologia, część II Rzym", "genre": "epika" },
+            { "id": 5, "author": "Wergiliusz", "title": "Eneida", "genre": "liryka" },
+            { "id": 6, "author": "Św. Augustyn", "title": "Wyznania", "genre": "epika" },
+            { "id": 7, "author": "Św. Tomasz z Akwinu", "title": "Summa teologiczna", "genre": "epika" },
+            { "id": 8, "author": "François Villon", "title": "Wielki testament", "genre": "liryka" },
+            { "id": 9, "author": "François Rabelais", "title": "Gargantua i Pantagruel", "genre": "epika" },
+            { "id": 10, "author": "Michel de Montaigne", "title": "Próby", "genre": "epika" },
+            { "id": 11, "author": "Jan Kochanowski", "title": "Treny", "genre": "liryka" },
+            { "id": 12, "author": "Piotr Skarga", "title": "Żywoty świętych", "genre": "epika" },
+            { "id": 13, "author": "William Szekspir", "title": "Hamlet", "genre": "dramat" },
+            { "id": 14, "author": "Sławomir Mrożek", "title": "Emigranci", "genre": "liryka" },
+            { "id": 15, "author": "Juliusz Słowacki", "title": "Lilla Weneda", "genre": "liryka" },
+            { "id": 16, "author": "Cyprian Kamil Norwid", "title": "Bema pamięci żałobny rapsod", "genre": "liryka" },
+            { "id": 17, "author": "Honoré de Balzac", "title": "Charles Dickens", "genre": "epika" },
+            { "id": 18, "author": "Stanisław Wyspiański", "title": "Noc listopadowa", "genre": "epika" },
+            { "id": 19, "author": "Franz Kafka", "title": "Proces", "genre": "epika" },
+            { "id": 20, "author": "Michaił Bułhakow", "title": "Mistrz i Małgorzata", "genre": "epika" },
+            { "id": 21, "author": "Stanisław Ignacy Witkiewicz", "title": "Szewcy", "genre": "epika" },
+            { "id": 23, "author": "Bruno Schulz", "title": "Sklepy cynamonowe", "genre": "epika" },
+            { "id": 24, "author": "Tadeusz Konwicki", "title": "Mała apokalipsa", "genre": "" },
+            { "id": 25, "author": "Jorge Luis Borges", "title": "Opowiadania", "genre": "epika" },
+            { "id": 26, "author": "Janusz Głowacki", "title": "Antygona w Nowym Jorku", "genre": "" }
+        ]
+    });
+
+    return JSON.parse(jsonText);
+}
+
+// function createBooksTable() {
+//     const books = readJSON();
+//     s = "";
+//     s += '<table><tr>';
+
+// }

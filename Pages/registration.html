@@ -13,37 +13,29 @@
     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="../Style/style.css">
     <script src="../Style/script.js"></script>
+    <script src="../Style/jQuery.js"></script>
 
 </head>
 
-<body>
+<body onload='pushMenu("registration")'>
 
     <div class="title">
         Rejestracja
     </div>
-    <div class="menu" onload="pushMenu()">
-        <ul>
-            <li><a href="index.html">Strona Główna</a></li>
-            <li><a href="article.html">Artykuł</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-            <li class="current"><a href="registration.html" title="Zarejestruj się!">Rejestracja</a></li>
-            <li><a href="books.html">Nasze książki</a></li>
-        </ul>
-        <div style="clear: both;"></div>
-    </div>
+    <div id="menu"></div>
 
     <div class="form">
-        <form id='form'>
+        <form id='form' onsubmit="send(event)">
             <fieldset>
                 <legend> Dane osobowe </legend>
-                <div> <label> <li> Imię:</li> <input type="text" id="name" maxlength="150"> </label> </div>
-                <div> <label> <li> Nazwisko:</li> <input type="text" id="surname" maxlength="150"> </label> </div>
-                <div> <label> <li> Email:</li> <input type="email" id="email" required> </label> </div>
-                <div> <label> <li> Hasło:</li> <input type="password" oninput="checkPassword()" id="pass1" required> </label> </div>
-                <div> <label> <li> Powtórz hasło:</li> <input type="password" id="pass2" oninput="checkPassword()" required> </label> </div>
-                <label><li></li><i id="checkPass"></i></label>
+                <div> <label> <span> Imię:</span> <input type="text" id="name" name="name" maxlength="150"> </label> </div>
+                <div> <label> <span> Nazwisko:</span> <input type="text" id="surname" name="surname" maxlength="150"> </label> </div>
+                <div> <label> <span> Email:</span> <input type="email" id="email" name="email" required> </label> </div>
+                <div> <label> <span> Hasło:</span> <input type="password" oninput="checkPassword()" name="pass" id="pass1" required> </label> </div>
+                <div> <label> <span> Powtórz hasło:</span> <input type="password" id="pass2" oninput="checkPassword()" required> </label> </div>
+                <label><span></span><i id="checkPass"></i></label>
 
-                <div><label><li>Płeć:</li>
+                <div><label><span>Płeć:</span>
                     <label class="sex">Kobieta <input type="radio" name="sex" value="K"></label>
                     <label class="sex">Mężczyzna <input type="radio" name="sex" value="M"></label>
                     <label class="sex">Inna <input type="radio" name="sex" value="I"></label>
@@ -56,8 +48,8 @@
 
                 <div><label>
 
-                    <li> Województwo:</li>
-                    <select id="province" onclick="prov()">
+                    <span> Województwo:</span>
+                    <select id="province" name="province" onchange="prov()">
                         <option value="none"> Wybierz Województwo </option>
                         <option value="1"> Dolnośląskie </option>
                         <option value="2"> Kujawsko-pomorskie </option>
@@ -81,28 +73,30 @@
                 <div>
                     <label>
 
-                        <li>Miasto:</li>
-                        <select id="city">
+                        <span>Miasto:</span>
+                        <select id="city" name="city">
                             <option> ... </option>
                         </select>
                     </label>
                 </div>
                 <div class="postCode">
                     <label>
-                    <li>Kod pocztowy:</li>
-                    <input  id="firstNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()"oninput= "focusOnElementById('secondNum')">
-                    <input  id="secondNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()"oninput="focusOnElementById('thirdNum')"> -
-                    <input  id="thirdNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()"oninput= "focusOnElementById('fourthNum')">
-                    <input  id="fourthNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()"oninput="focusOnElementById('fifthNum')">
-                    <input  id="fifthNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()" >
+                    <span>Kod pocztowy:</span>
+                    <input type="hidden" name="postCode" id="postCode">
+                    <input  id="firstNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()" oninput= "focusOnElementById('secondNum')">
+                    <input  id="secondNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()" oninput="focusOnElementById('thirdNum')"> -
+                    <input  id="thirdNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()" oninput= "focusOnElementById('fourthNum')">
+                    <input  id="fourthNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()" oninput="focusOnElementById('fifthNum')">
+                    <input  id="fifthNum" type="text" pattern="[0-9]" maxlength="1" onfocus="this.select()" oninput="focusOnElementById('fifthNum')">
                     </label>
                 </div>
+
             </fieldset>
 
             <fieldset>
                 <legend> Zgoda na regulaminy </legend>
                 <div>
-                    <input type="checkbox" id="regulation" required>
+                    <input type="checkbox" name='regulation' id="regulation" required>
                     <p style="font-size: 12px;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in mi egestas, ornare turpis a, fringilla massa. In tempus ullamcorper ultrices. Pellentesque vel aliquet ligula, sit amet tristique augue. Morbi enim tellus, posuere
                         eget molestie eu, pharetra quis leo. Curabitur massa ante, tincidunt sed nisi vitae, consectetur luctus sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia
                         nostra, per inceptos himenaeos. Sed euismod in risus nec scelerisque. Donec sed eleifend magna, sed eleifend quam. Ut sed eros lacus. Praesent imperdiet, nunc a rutrum rhoncus, nisi ex vehicula mauris, vel posuere dolor dolor at
@@ -110,11 +104,11 @@
                         <a href="http://www.bg.agh.edu.pl/media/regulamin2015/r1.pdf" target="_blank" style="color: rgb(89, 2, 172)">Zabacz regulamin</a></p>
                 </div>
                 <div>
-                    <label style="cursor: pointer;">Zgadzam się na wysłanie ofert martetingowych<input type="checkbox" id="marketing"></label>
+                    <label style="cursor: pointer;">Zgadzam się na wysłanie ofert martetingowych<input type="checkbox" name='marketing' id="marketing"></label>
                 </div>
             </fieldset>
             <div>
-                <label><input type="submit" value="Wyślij" onclick="send()" ></label>
+                <label><input type="submit" value="Wyślij"  ></label>
             </div>
         </form>
     </div>

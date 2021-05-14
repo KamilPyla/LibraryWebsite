@@ -8,7 +8,7 @@ body {
     text-align: center;
 }
 
-.menu {
+#menu {
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
@@ -21,27 +21,28 @@ body {
     text-align: center;
 }
 
-.menu>ul {
+#menu>ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
     line-height: 200%;
     display: inline-block;
     width: 100%;
+    text-align: center;
 }
 
-.menu>ul>li {
+#menu>ul>li {
     float: left;
     width: 19.5%;
     color: #ffffff;
     border-right: 1px dashed black;
 }
 
-.menu>ul>li:first-child {
+#menu>ul>li:first-child {
     border-left: 1px dashed black;
 }
 
-.menu>ul>li:hover {
+#menu>ul>li:hover {
     background-color: #c26363;
 }
 
@@ -49,7 +50,7 @@ body {
     background-color: #c26363;
 }
 
-.menu>ul a {
+#menu>ul a {
     color: #ffffff;
     text-decoration: none;
     display: block;
@@ -284,7 +285,7 @@ input[type='submit'] {
     display: inline;
 }
 
-label>li {
+label>span {
     width: 30%;
     display: inline-block;
 }
