@@ -149,7 +149,7 @@ p {
 
 th,
 td {
-    border: 2px solid #000000;
+    border: 2px solid #330000;
     text-align: center;
 }
 
@@ -157,7 +157,7 @@ td {
 /* Nasze książki */
 
 .search {
-    width: 30%;
+    width: 40%;
     padding: 5px;
     color: #ffffff;
     margin-left: auto;
@@ -165,22 +165,17 @@ td {
     text-align: center;
 }
 
-.record {
-    float: left;
-    width: 75%;
-}
-
-.button {
-    float: left;
-    width: 25%;
-}
-
-.button:hover {
-    background-color: blueviolet;
+.search>input[type='button'] {
+    width: 100px;
+    border-radius: 10px;
+    border: solid 2px #FFF;
+    background-color: rgb(170, 66, 66);
+    color: #FFF;
+    font-size: 15px;
     cursor: pointer;
 }
 
-#List {
+#list {
     padding: 4px 10px;
     width: 80%;
     margin-left: auto;
@@ -188,17 +183,18 @@ td {
     color: #ffffff;
 }
 
-#List>table {
+#list>table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 5px;
 }
 
-#List>table th {
-    background-color: blueviolet;
+#list>table th {
+    background-color: rgb(170, 66, 66);
 }
 
-#List>table tr:nth-child(odd) td {
-    background-color: #8a8a8a98;
+#list>table tr:nth-child(odd) td {
+    background-color: #8a8a8a3b;
 }
 
 

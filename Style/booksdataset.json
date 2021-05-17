@@ -20,10 +20,10 @@
         { "id": 18, "author": "Stanisław Wyspiański", "title": "Noc listopadowa", "genre": "epika" },
         { "id": 19, "author": "Franz Kafka", "title": "Proces", "genre": "epika" },
         { "id": 20, "author": "Michaił Bułhakow", "title": "Mistrz i Małgorzata", "genre": "epika" },
+        { "id": 22, "author": "Janusz Głowacki", "title": "Antygona w Nowym Jorku", "genre": "" },
         { "id": 21, "author": "Stanisław Ignacy Witkiewicz", "title": "Szewcy", "genre": "epika" },
         { "id": 23, "author": "Bruno Schulz", "title": "Sklepy cynamonowe", "genre": "epika" },
         { "id": 24, "author": "Tadeusz Konwicki", "title": "Mała apokalipsa", "genre": "" },
-        { "id": 25, "author": "Jorge Luis Borges", "title": "Opowiadania", "genre": "epika" },
-        { "id": 26, "author": "Janusz Głowacki", "title": "Antygona w Nowym Jorku", "genre": "" }
+        { "id": 25, "author": "Jorge Luis Borges", "title": "Opowiadania", "genre": "epika" }
     ]
 }

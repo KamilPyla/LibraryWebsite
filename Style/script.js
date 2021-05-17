@@ -146,7 +146,8 @@ function checkPassword() {
 
 
 function send(event) {
-    let formData = $('#form').serializeArray().map(function(r) {
+    let formData = $('#form').serializeArray();
+    formData = $('#form').serializeArray().map(function(r) {
         return r.name + ": " + r.value;
     }).join("\n");
 
@@ -181,22 +182,12 @@ function getPostCode() {
 
 // tabela z książkami:
 
-function readAddBooks() {
-    fetch("./booksdataset.json")
-        .then(function(resp) {
-            return resp.json();
-        })
-        .then(function(data) {
-            console.log(data);
-        });
-}
-
 function readJSON() {
     const jsonText = JSON.stringify({
         "data": [
             { "id": 1, "author": "Arystoteles", "title": "Poetyka, Retoryka (fragmenty)", "genre": "liryka" },
             { "id": 2, "author": "Platon", "title": "Państwo", "genre": "epika" },
-            { "id": 3, "author": "Arystofanes – ", "title": "Chmury", "genre": "liryka" },
+            { "id": 3, "author": "Arystofanes", "title": "Chmury", "genre": "liryka" },
             { "id": 4, "author": "Jan Parandowski", "title": "Mitologia, część II Rzym", "genre": "epika" },
             { "id": 5, "author": "Wergiliusz", "title": "Eneida", "genre": "liryka" },
             { "id": 6, "author": "Św. Augustyn", "title": "Wyznania", "genre": "epika" },
@@ -215,19 +206,44 @@ function readJSON() {
             { "id": 19, "author": "Franz Kafka", "title": "Proces", "genre": "epika" },
             { "id": 20, "author": "Michaił Bułhakow", "title": "Mistrz i Małgorzata", "genre": "epika" },
             { "id": 21, "author": "Stanisław Ignacy Witkiewicz", "title": "Szewcy", "genre": "epika" },
+            { "id": 22, "author": "Janusz Głowacki", "title": "Antygona w Nowym Jorku", "genre": "dramat" },
             { "id": 23, "author": "Bruno Schulz", "title": "Sklepy cynamonowe", "genre": "epika" },
-            { "id": 24, "author": "Tadeusz Konwicki", "title": "Mała apokalipsa", "genre": "" },
+            { "id": 24, "author": "Tadeusz Konwicki", "title": "Mała apokalipsa", "genre": "dramat" },
             { "id": 25, "author": "Jorge Luis Borges", "title": "Opowiadania", "genre": "epika" },
-            { "id": 26, "author": "Janusz Głowacki", "title": "Antygona w Nowym Jorku", "genre": "" }
+            { "id": 26, "author": "John Eldridge", "title": "Dzikie serce", "genre": "epika" }
         ]
     });
 
     return JSON.parse(jsonText);
 }
 
-// function createBooksTable() {
-//     const books = readJSON();
-//     s = "";
-//     s += '<table><tr>';
+function ifInclude(str, data) {
+    console.log('szukaj!');
+    for (var key in data) {
+        if (typeof(data[key]) == 'string' && data[key].toLowerCase().includes(str.toLowerCase())) {
+            return true;
+        }
+    }
+    return false;
+}
 
-// }
+function createBooksTable(str) {
+    var books = readJSON();
+
+    s = '<table>' + '<tr>';
+    for (var k in books.data[0])
+        s += "<th>" + k + "</th>";
+
+
+    for (i = 0; i < books.data.length; i++) {
+        if (str == '' || ifInclude(str, books.data[i])) {
+            s += '<tr>'
+            for (var h in books.data[i]) {
+                s += '<td>' + books.data[i][h] + '</td>';
+            }
+            s += '</tr>';
+        }
+    }
+    s += '</table>';
+    document.getElementById("list").innerHTML = s;
+}

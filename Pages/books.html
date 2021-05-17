@@ -15,127 +15,17 @@
     <script src="../Style/script.js"></script>
 </head>
 
-<body onload="pushMenu('books')">
+<body onload="pushMenu('books'), createBooksTable('')">
     <div class="title">
         Nasze książki
     </div>
     <div id="menu"> </div>
 
-    <!-- Wyszukiwarka!!! -->
-
     <div class="search">
-        <input type="text" id="phrase" />
-        <input type="submit" value="szukaj" onclick="search()" />
+        <input type="text" id="phrase" oninput="createBooksTable(this.value)" />
+        <input type="button" value="szukaj" onclick="createBooksTable(document.getElementById('phrase').value)" />
     </div>
-    <div id="List">
-        <table>
-            <tr>
-                <th>l.p</th>
-                <th>Tytuł</th>
-                <th>Autor</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>19</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-    </div>
+    <div id="list"></div>
 
 
 </body>
