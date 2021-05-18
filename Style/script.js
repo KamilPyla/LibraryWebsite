@@ -17,7 +17,7 @@ function city(tab) {
 function pushMenu(name) {
     s = '<ul><li id="homePage"><a href="index.html">Strona Główna</a></li><li id="article"><a href="article.html">Artykuł</a></li><li id="contact"><a href="contact.html">Kontakt</a></li><li id="registration"><a href="registration.html" title="Zarejestruj się!">Rejestracja</a></li><li id="books"><a href="books.html">Nasze książki</a></li></ul><div style="clear: both;"></div>';
 
-    // $('#menu').load('../Pages/menu.html');
+    // $('#menu').load('./menu.html');
 
     document.getElementById("menu").innerHTML = s;
 
@@ -146,11 +146,12 @@ function checkPassword() {
 
 function send(event) {
     let formData = $('#form').serializeArray();
-    formData = $('#form').serializeArray().map(function(r) {
+
+    formData = formData.map(function(r) {
         return r.name + ": " + r.value;
     }).join("\n");
 
-    if (document.getElementById("marketing").checked != true) {
+    if (!formData.includes('marketing')) {
         if (confirm("Czy jesteś pewien, że nie chcesz otrzymywać materiałów marketingowych?")) {
             alert(formData);
             alert("Formularz został wysłany!");
@@ -227,6 +228,10 @@ function ifInclude(str, data) {
 
 function createBooksTable(str) {
     var books = readJSON();
+    $.getJSON('file:///home/alfakp/Akra/LibraryWebsite/Style/booksdataset.json', function(json) {
+        console.log(json);
+    });
+    // var json = require('../Style')
 
     s = '<table>' + '<tr>';
     for (var k in books.data[0])
