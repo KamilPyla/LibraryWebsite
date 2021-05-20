@@ -7,11 +7,11 @@ function pushMenu(name) {
 
 function setCurrent() {
 
-    var all = $(".menu_item").map(function() {
-        return this.attr('href');
+    var all = $(".menu_item").map(function(a) {
+        return a.attr("href");
     }).get();
 
-    console.log(all.join());
+    console.log(all);
 
     console.log($(location).attr("href"));
 }
@@ -147,9 +147,22 @@ function checkPassword() {
 
 function send(event) {
 
-    let formData = $('#form').serializeArray().map(function(r) {
+    let formData = $('#form').serializeArray()
+
+    event.preventDefault();
+
+    console.log(formData.name);
+
+    for (var key in formData) {
+        console.log(key.name);
+    }
+
+
+    formData.map(function(r) {
         return r.name + ": " + r.value;
     }).join("\n");
+
+
 
     if (!formData.includes('marketing')) {
         if (confirm("Czy jesteś pewien, że nie chcesz otrzymywać materiałów marketingowych?")) {
@@ -194,6 +207,7 @@ function createBooksTable(str) {
 
     $.getJSON('../Style/booksdataset.json', function(books) {
         s = '<table>' + '<tr>';
+        console.log(books);
 
         for (var k in books.data[0])
             s += "<th>" + k + "</th>";
