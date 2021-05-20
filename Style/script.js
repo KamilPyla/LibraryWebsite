@@ -1,27 +1,27 @@
-// funkcja szukająca 
+function pushMenu(name) {
 
-function search() {
-    var str = document.getElementById("phrase").value;
-    str = "<h1>" + str + "<h1/>";
-    document.getElementById("List").innerHTML = str;
+    $('#menu').load('./menu.html');
+
+    setCurrent();
 }
+
+function setCurrent() {
+
+    var all = $(".menu_item").map(function() {
+        return this.attr('href');
+    }).get();
+
+    console.log(all.join());
+
+    console.log($(location).attr("href"));
+}
+
 
 function city(tab) {
     s = "";
     for (i = 0; i < tab.length; i++)
         s = s + '<option value="' + tab[i] + '">' + tab[i] + '</option>';
     return s;
-
-}
-
-function pushMenu(name) {
-    s = '<ul><li id="homePage"><a href="index.html">Strona Główna</a></li><li id="article"><a href="article.html">Artykuł</a></li><li id="contact"><a href="contact.html">Kontakt</a></li><li id="registration"><a href="registration.html" title="Zarejestruj się!">Rejestracja</a></li><li id="books"><a href="books.html">Nasze książki</a></li></ul><div style="clear: both;"></div>';
-
-    // $('#menu').load('./menu.html');
-
-    document.getElementById("menu").innerHTML = s;
-
-    document.getElementById(name).className = 'current';
 }
 
 
@@ -130,6 +130,7 @@ function prov() {
 }
 
 function checkPassword() {
+
     var pass1 = document.getElementById("pass1").value;
     var pass2 = document.getElementById("pass2").value;
     var text = document.getElementById("checkPass");
@@ -145,9 +146,8 @@ function checkPassword() {
 
 
 function send(event) {
-    let formData = $('#form').serializeArray();
 
-    formData = formData.map(function(r) {
+    let formData = $('#form').serializeArray().map(function(r) {
         return r.name + ": " + r.value;
     }).join("\n");
 
@@ -163,10 +163,8 @@ function send(event) {
 }
 
 
-
 function focusOnElementById(id) {
     document.getElementById(id).focus();
-
     getPostCode();
 }
 
@@ -182,42 +180,8 @@ function getPostCode() {
 
 // tabela z książkami:
 
-function readJSON() {
-    const jsonText = JSON.stringify({
-        "data": [
-            { "id": 1, "author": "Arystoteles", "title": "Poetyka, Retoryka (fragmenty)", "genre": "liryka" },
-            { "id": 2, "author": "Platon", "title": "Państwo", "genre": "epika" },
-            { "id": 3, "author": "Arystofanes", "title": "Chmury", "genre": "liryka" },
-            { "id": 4, "author": "Jan Parandowski", "title": "Mitologia, część II Rzym", "genre": "epika" },
-            { "id": 5, "author": "Wergiliusz", "title": "Eneida", "genre": "liryka" },
-            { "id": 6, "author": "Św. Augustyn", "title": "Wyznania", "genre": "epika" },
-            { "id": 7, "author": "Św. Tomasz z Akwinu", "title": "Summa teologiczna", "genre": "epika" },
-            { "id": 8, "author": "François Villon", "title": "Wielki testament", "genre": "liryka" },
-            { "id": 9, "author": "François Rabelais", "title": "Gargantua i Pantagruel", "genre": "epika" },
-            { "id": 10, "author": "Michel de Montaigne", "title": "Próby", "genre": "epika" },
-            { "id": 11, "author": "Jan Kochanowski", "title": "Treny", "genre": "liryka" },
-            { "id": 12, "author": "Piotr Skarga", "title": "Żywoty świętych", "genre": "epika" },
-            { "id": 13, "author": "William Szekspir", "title": "Hamlet", "genre": "dramat" },
-            { "id": 14, "author": "Sławomir Mrożek", "title": "Emigranci", "genre": "liryka" },
-            { "id": 15, "author": "Juliusz Słowacki", "title": "Lilla Weneda", "genre": "liryka" },
-            { "id": 16, "author": "Cyprian Kamil Norwid", "title": "Bema pamięci żałobny rapsod", "genre": "liryka" },
-            { "id": 17, "author": "Honoré de Balzac", "title": "Charles Dickens", "genre": "epika" },
-            { "id": 18, "author": "Stanisław Wyspiański", "title": "Noc listopadowa", "genre": "epika" },
-            { "id": 19, "author": "Franz Kafka", "title": "Proces", "genre": "epika" },
-            { "id": 20, "author": "Michaił Bułhakow", "title": "Mistrz i Małgorzata", "genre": "epika" },
-            { "id": 21, "author": "Stanisław Ignacy Witkiewicz", "title": "Szewcy", "genre": "epika" },
-            { "id": 22, "author": "Janusz Głowacki", "title": "Antygona w Nowym Jorku", "genre": "dramat" },
-            { "id": 23, "author": "Bruno Schulz", "title": "Sklepy cynamonowe", "genre": "epika" },
-            { "id": 24, "author": "Tadeusz Konwicki", "title": "Mała apokalipsa", "genre": "dramat" },
-            { "id": 25, "author": "Jorge Luis Borges", "title": "Opowiadania", "genre": "epika" },
-            { "id": 26, "author": "John Eldridge", "title": "Dzikie serce", "genre": "epika" }
-        ]
-    });
-
-    return JSON.parse(jsonText);
-}
-
 function ifInclude(str, data) {
+
     for (var key in data) {
         if (typeof(data[key]) == 'string' && data[key].toLowerCase().includes(str.toLowerCase())) {
             return true;
@@ -227,26 +191,24 @@ function ifInclude(str, data) {
 }
 
 function createBooksTable(str) {
-    var books = readJSON();
-    $.getJSON('file:///home/alfakp/Akra/LibraryWebsite/Style/booksdataset.json', function(json) {
-        console.log(json);
-    });
-    // var json = require('../Style')
 
-    s = '<table>' + '<tr>';
-    for (var k in books.data[0])
-        s += "<th>" + k + "</th>";
+    $.getJSON('../Style/booksdataset.json', function(books) {
+        s = '<table>' + '<tr>';
 
-    for (i = 0; i < books.data.length; i++) {
-        if (str == '' || ifInclude(str, books.data[i])) {
-            s += '<tr>'
-            for (var h in books.data[i]) {
-                s += '<td>' + books.data[i][h] + '</td>';
+        for (var k in books.data[0])
+            s += "<th>" + k + "</th>";
+
+        for (i = 0; i < books.data.length; i++) {
+            if (str == '' || ifInclude(str, books.data[i])) {
+                s += '<tr>'
+
+                for (var h in books.data[i]) {
+                    s += '<td>' + books.data[i][h] + '</td>';
+                }
+                s += '</tr>';
             }
-            s += '</tr>';
         }
-    }
-    s += '</table>';
-
-    document.getElementById("list").innerHTML = s;
+        s += '</table>';
+        document.getElementById("list").innerHTML = s;
+    });
 }
